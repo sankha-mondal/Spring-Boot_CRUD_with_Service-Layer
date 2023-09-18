@@ -69,15 +69,14 @@ public class CustomerController {
 //======================================================================================================================
 
 	//  Insert Operation:-    Op:2
-		//  http://localhost:8080/customer/addCustomer
+	//  http://localhost:8080/customer/addCustomer
 
-		@PostMapping(value="/addCustomer", consumes = MediaType.APPLICATION_JSON_VALUE)
-		public ResponseEntity<?> addCustomer(@RequestBody CustomerEntity customerReq) {
+	@PostMapping(value="/addCustomer", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?> addCustomer(@RequestBody CustomerEntity customerReq) {
 
-			System.out.println(customerReq.getCustomerEmail());
-
-			return new ResponseEntity<>(customerService.addCustomer(customerReq),HttpStatus.CREATED);
-		}
+		System.out.println(customerReq.getCustomerEmail());
+		return new ResponseEntity<>(customerService.addCustomer(customerReq),HttpStatus.CREATED);
+	}
 
 //======================================================================================================================
 

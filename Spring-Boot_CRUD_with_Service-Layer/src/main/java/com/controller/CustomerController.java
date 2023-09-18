@@ -18,7 +18,7 @@ import com.service.CustomerService;
 import com.payload.ApiResponse;
 
 @RestController
-@RequestMapping("/customer") // http://localhost:8080/customer
+@RequestMapping("/customer") // http://localhost:8585/customer
 public class CustomerController {
 
 	@Autowired
@@ -26,7 +26,7 @@ public class CustomerController {
 
 //======================================================================================================================
 
-	// http://localhost:8080/customer/hello_world
+	// http://localhost:8585/customer/hello_world
 
 	@GetMapping("/hello_world")
 	public String getData() {
@@ -36,7 +36,7 @@ public class CustomerController {
 //======================================================================================================================
 
 	// Retrieve Operation:- Op:1A
-	// http://localhost:8080/customer/getAll
+	// http://localhost:8585/customer/getAll
 
 	@GetMapping("/getAll")
 	public ResponseEntity<?> getAllCustomers() {
@@ -47,7 +47,7 @@ public class CustomerController {
 //======================================================================================================================
 
 	// Retrieve data by Id :- Op:1B
-	// http://localhost:8080/customer/getById/{id}
+	// http://localhost:8585/customer/getById/{id}
 
 	@GetMapping("/getById/{id}")
 	public ResponseEntity<?> searchCustomerById(@PathVariable("id") Long customerId) {
@@ -58,7 +58,7 @@ public class CustomerController {
 //======================================================================================================================
 
 	// Retrieve data by Email :- Op:1C
-	// http://localhost:8080/customer/getByEmail/{email}
+	// http://localhost:8585/customer/getByEmail/{email}
 
 	@GetMapping("/getByEmail/{email}")
 	public ResponseEntity<?> searchCustomerByEmail(@PathVariable("email") String email) {
@@ -69,7 +69,7 @@ public class CustomerController {
 //======================================================================================================================
 
 	//  Insert Operation:-    Op:2
-	//  http://localhost:8080/customer/addCustomer
+	//  http://localhost:8585/customer/addCustomer
 
 	@PostMapping(value="/addCustomer", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> addCustomer(@RequestBody CustomerEntity customerReq) {
@@ -81,7 +81,7 @@ public class CustomerController {
 //======================================================================================================================
 
 	  //  Delete Operation by Id:-   Op:3
-	  //  http://localhost:8080/customer/deleteCustomer/{customerId}
+	  //  http://localhost:8585/customer/deleteCustomer/{customerId}
 
 	  @DeleteMapping("/deleteCustomer/{customerId}")
 	  public ResponseEntity<ApiResponse> deleteCustomer(@PathVariable("customerId") Long customerId) {
@@ -94,7 +94,7 @@ public class CustomerController {
 //======================================================================================================================
 
 	  //  Update Operation:-   Op:4  
-	  //  http://localhost:8080/customer/updateCustomer/{customerId}
+	  //  http://localhost:8585/customer/updateCustomer/{customerId}
 
 	  @PutMapping("/updateCustomer/{customerId}")
 	  public ResponseEntity<?> updateCustomer(@PathVariable("customerId") Long customerId, 

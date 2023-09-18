@@ -24,7 +24,7 @@ public class CustomerController {
 	@Autowired
 	CustomerService customerService;
 
-//======================================================================================================================
+//===================================================================================================================================
 
 	// http://localhost:8585/customer/hello_world
 
@@ -33,7 +33,7 @@ public class CustomerController {
 		return "Hello World";
 	}
 
-//======================================================================================================================
+//===================================================================================================================================
 
 	// Retrieve Operation:- Op:1A
 	// http://localhost:8585/customer/getAll
@@ -44,7 +44,7 @@ public class CustomerController {
 		return new ResponseEntity<>(customerService.getAllCustomers(), HttpStatus.FOUND);
 	}
 
-//======================================================================================================================
+//===================================================================================================================================
 
 	// Retrieve data by Id :- Op:1B
 	// http://localhost:8585/customer/getById/{id}
@@ -55,7 +55,7 @@ public class CustomerController {
 		return new ResponseEntity<>(customerService.getCustomerById(customerId), HttpStatus.FOUND);
 	}
 
-//======================================================================================================================
+//===================================================================================================================================
 
 	// Retrieve data by Email :- Op:1C
 	// http://localhost:8585/customer/getByEmail/{email}
@@ -66,7 +66,7 @@ public class CustomerController {
 		return new ResponseEntity<>(customerService.getCustomerByEmail(email), HttpStatus.FOUND);
 	}
 
-//======================================================================================================================
+//===================================================================================================================================
 
 	//  Insert Operation:-    Op:2
 	//  http://localhost:8585/customer/addCustomer
@@ -78,7 +78,7 @@ public class CustomerController {
 		return new ResponseEntity<>(customerService.addCustomer(customerReq),HttpStatus.CREATED);
 	}
 
-//======================================================================================================================
+//===================================================================================================================================
 
 	  //  Delete Operation by Id:-   Op:3
 	  //  http://localhost:8585/customer/deleteCustomer/{customerId}
@@ -91,7 +91,7 @@ public class CustomerController {
 		return new ResponseEntity<ApiResponse>(new ApiResponse("Customer details deleted Successfully", true), HttpStatus.OK);
 	  }
 
-//======================================================================================================================
+//===================================================================================================================================
 
 	  //  Update Operation:-   Op:4  
 	  //  http://localhost:8585/customer/updateCustomer/{customerId}
@@ -103,8 +103,8 @@ public class CustomerController {
 	    return new ResponseEntity<>(customerService.updateCustomer(customerReq, customerId), HttpStatus.CREATED);
 	  }
 
-//======================================================================================================================
-//======================================================================================================================
+//===================================================================================================================================
+//===================================================================================================================================
 
 	
 }
